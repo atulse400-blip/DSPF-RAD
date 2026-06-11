@@ -1,0 +1,26 @@
+      *---------------------------------------------------------
+      * STUDNTPF - Students Physical File
+      * All student master records for attendance system
+      *---------------------------------------------------------
+     A                                      UNIQUE
+     A          R STUDNTR                   TEXT('Student Record')
+     A            STUID         10A         TEXT('Student ID')
+     A                                      COLHDG('Student' 'ID')
+     A            STUFNM        30A         TEXT('First Name')
+     A                                      COLHDG('First' 'Name')
+     A            STULNM        30A         TEXT('Last Name')
+     A                                      COLHDG('Last' 'Name')
+     A            STUGRP        10A         TEXT('Grade/Class Group')
+     A                                      COLHDG('Grade' 'Group')
+     A            STUEML        50A         TEXT('Email Address')
+     A                                      COLHDG('Email')
+     A            STUPHONE      15A         TEXT('Phone Number')
+     A                                      COLHDG('Phone')
+     A            STUSTS         1A         TEXT('A=Active I=Inactive')
+     A                                      COLHDG('Status')
+     A                                      VALUES('A' 'I')
+     A                                      DFT('A')
+     A            STUCRDT         L         TEXT('Created Date')
+     A                                      COLHDG('Created' 'Date')
+     A                                      DFT(CURRENT_DATE)
+     A          K STUID

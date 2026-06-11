@@ -1,0 +1,27 @@
+      *---------------------------------------------------------
+      * ATNDRECPF - Attendance Records Physical File
+      * Individual attendance records per student per course
+      * Status: P=Present A=Absent L=Late E=Excused
+      *---------------------------------------------------------
+     A          R ATNDREC                   TEXT('Attendance Record')
+     A            ATNDID        10A         TEXT('Record ID (UUID prefix)')
+     A                                      COLHDG('Record' 'ID')
+     A            ATNDSTU       10A         TEXT('Student ID (FK->STUDNTPF)')
+     A                                      COLHDG('Student' 'ID')
+     A            ATNDCRS       10A         TEXT('Course ID (FK->COURSEPF)')
+     A                                      COLHDG('Course' 'ID')
+     A            ATNDDT          L         TEXT('Attendance Date')
+     A                                      COLHDG('Date')
+     A            ATNDTM          T         TEXT('Time Recorded')
+     A                                      COLHDG('Time')
+     A                                      DFT(CURRENT_TIME)
+     A            ATNDSTS        1A         TEXT('P=Present A=Absent L=Late E=Excused')
+     A                                      COLHDG('Status')
+     A                                      VALUES('P' 'A' 'L' 'E')
+     A                                      DFT('P')
+     A            ATNDNTS      200A         TEXT('Notes/Remarks')
+     A                                      COLHDG('Notes')
+     A            ATNDCRDT        L         TEXT('Created Date')
+     A                                      COLHDG('Created')
+     A                                      DFT(CURRENT_DATE)
+     A          K ATNDID
