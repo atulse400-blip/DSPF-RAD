@@ -1,0 +1,26 @@
+      *---------------------------------------------------------
+      * COURSEPF - Courses Physical File
+      * Master list of all courses/subjects
+      *---------------------------------------------------------
+     A                                      UNIQUE
+     A          R COURSER                   TEXT('Course Record')
+     A            CRSID         10A         TEXT('Course ID')
+     A                                      COLHDG('Course' 'ID')
+     A            CRSNM         50A         TEXT('Course Name')
+     A                                      COLHDG('Course' 'Name')
+     A            CRSDSC       100A         TEXT('Course Description')
+     A                                      COLHDG('Description')
+     A            CRSINST       50A         TEXT('Instructor Name')
+     A                                      COLHDG('Instructor')
+     A            CRSSCHED      30A         TEXT('Schedule e.g. MWF 09:00')
+     A                                      COLHDG('Schedule')
+     A            CRSROOM       10A         TEXT('Room/Location')
+     A                                      COLHDG('Room')
+     A            CRSSTS         1A         TEXT('A=Active I=Inactive')
+     A                                      COLHDG('Status')
+     A                                      VALUES('A' 'I')
+     A                                      DFT('A')
+     A            CRSCRDT         L         TEXT('Created Date')
+     A                                      COLHDG('Created' 'Date')
+     A                                      DFT(CURRENT_DATE)
+     A          K CRSID

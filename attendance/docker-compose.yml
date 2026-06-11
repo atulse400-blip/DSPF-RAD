@@ -1,0 +1,38 @@
+version: '3.9'
+
+# ============================================================
+# Student Attendance System — Docker Compose
+# Run with: docker-compose up
+# Frontend: http://localhost:5173
+# API:      http://localhost:3001
+# ============================================================
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - USE_MOCK=true          # Set to false + add IBMI_* vars for real IBM i
+      # - IBMI_HOST=192.168.1.100
+      # - IBMI_USER=QSECOFR
+      # - IBMI_PASSWORD=secret
+      # - IBMI_LIBRARY=ATTNDLIB
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3001/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5173:80"
+    depends_on:
+      backend:
+        condition: service_healthy

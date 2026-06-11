@@ -1,0 +1,19 @@
+      *---------------------------------------------------------
+      * STUCRSEPF - Student-Course Enrollment Physical File
+      * Maps students to their enrolled courses
+      *---------------------------------------------------------
+     A                                      UNIQUE
+     A          R STUCRSER                  TEXT('Student Course Enrollment')
+     A            ENRLSTU       10A         TEXT('Student ID')
+     A                                      COLHDG('Student' 'ID')
+     A            ENRLCRS       10A         TEXT('Course ID')
+     A                                      COLHDG('Course' 'ID')
+     A            ENRLDT          L         TEXT('Enrollment Date')
+     A                                      COLHDG('Enrolled' 'Date')
+     A                                      DFT(CURRENT_DATE)
+     A            ENRLSTS        1A         TEXT('A=Active D=Dropped')
+     A                                      COLHDG('Status')
+     A                                      VALUES('A' 'D')
+     A                                      DFT('A')
+     A          K ENRLSTU
+     A          K ENRLCRS
